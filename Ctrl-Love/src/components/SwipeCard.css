@@ -1,64 +1,135 @@
-.top-section {
-  border-top-right-radius: 70px 70px;
-  border-top-left-radius: 70px 70px;
+.card-container{
+  background-image: url("../assets/background-gradient.svg");
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr 2fr;
+  align-content: center;
+  text-align: center;
+  max-width: 360px;
+  height: 800px;
+  grid-column: 2;
+}
+
+.profile-pic{
+  scale: 0.96;
+  aspect-ratio: 1/1;
+}
+
+.name-birthDate{
+  font-size: 32px;
+}
+
+.interests{
+  display: inline-flex;
+  overflow: scroll;
+  max-width: 100%;
+}
+
+.interests > p{
+  background-color: #343333;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+}
+
+.pic-div{
   display: flex;
-  justify-content: center;
-  background-color: aqua;
-  width: 25%;
 }
 
-.profile-pic {
-  margin-top: 10px;
-  height: 30%;
-  width: 30%;
-}
-
-.bottom-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 15px;
-  background-color: aqua;
-  width: 25%;
-  border-bottom-right-radius: 170px 120px;
-  border-bottom-left-radius: 170px 120px;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.next-pic{
+.a {
+  display: inline-block;
   border-radius: 50%;
-  top: 260px;
-  position: absolute;
-  right: 750px;
 }
 
-.prev-pic{
+a:hover .left, a:hover .right{
+  border: 0.5em solid #e74c3c;
+}
+
+a:hover .left:after, a:hover .right:after {
+  border-top: 0.5em solid #e74c3c;
+  border-right: 0.5em solid #e74c3c;
+}
+
+.left {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  border: 0.5em solid #333;
   border-radius: 50%;
-  top: 260px;
-  position: absolute;
-  left: 750px;
+  margin-right: 1.5em;
+  grid-row: 1;
 }
 
-.like-profile{
-  position: absolute;
-  right: 600px;
-  top: 450px;
-  background-color: #0DE523;
+.left:after {
+  content: '';
+    display: inline-block;
+  margin-top: 1.05em;
+  margin-left: 0.6em;
+  width: 1.4em;
+  height: 1.4em;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  grid-row: 1;
 }
 
-.dislike-profile{
-  position: absolute;
-  left: 600px;
-  top: 450px;
-  background-color: #F50505;
+
+.right {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  border: 0.5em solid #333;
+  border-radius: 50%;
+  margin-left: 1.5em;
 }
 
-#root{
-  width: 100%;
+.right:after {
+  content: '';
+  display: inline-block;
+  margin-top: 1.05em;
+  margin-left: -0.6em;
+  width: 1.4em;
+  height: 1.4em;
+  border-top: 0.5em solid #333;
+  border-right: 0.5em solid #333;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.outer-div{
+  display: grid;
+  grid-template-columns:auto;
+}
+
+.right-button{
+  display: grid;
+  grid-column: 3;
+  grid-template-rows:  3fr 1fr 1fr 2fr;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.left-button{
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  grid-template-rows:  3fr 1fr 1fr 2fr;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.very-wrapper{
+  display: flex;
+  flex-flow: column;
+}
+
+.like-dislike{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
