@@ -1,0 +1,25 @@
+.top-section {
+  border-top-left-radius: 120px 120px;
+  border-top-right-radius: 120px 120px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 2px;
+}
+
+.profile-pic {
+  width: 40%;
+}
+
+.bottom-section {
+  background-color: aqua;
+  margin: 2px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
