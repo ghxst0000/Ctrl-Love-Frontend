@@ -3,10 +3,20 @@ import { useState, useEffect } from "react";
 
 const Swipe = () => {
   const [users, setUsers] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    (async () => {})();
-  });
+    (async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("http://localhost:5091/api/users", {mode:"no-cors"});
+        //const json = await response.json();
+        console.log(response)
+        //console.log(json)
+      } catch (error) {
+        console.error(error);
+      }
+    }) ();
+  }, []);
 
   return (
     <>

@@ -41,7 +41,7 @@ function SwipeCard({
       <button className="next-pic" onClick={() => {setImageCounter(((imageCounter + 1) % images.length));console.log(imageCounter)}}>→</button>
       <button className="prev-pic" onClick={() => {setImageCounter(((imageCounter - 1) % images.length)); console.log(imageCounter)}} >←</button>
       <button className="like-profile" onClick={showNext}>👍</button>
-      <button className="dislike-profile">👎</button>
+      <button className="dislike-profile" onClick={showNext}>👎</button>
     </div>
     </div>
   );
