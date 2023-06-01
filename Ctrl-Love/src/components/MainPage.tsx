@@ -1,8 +1,9 @@
-import LoginForm from "./components/LoginForm";
-import logo from "./assets/logo.svg";
-import "./App.css";
+import React from "react";
+import LoginForm from "./LoginForm";
+import logo from "../assets/logo.svg";
+import "../App.css";
 
-function App() {
+const MainPage = () => {
   return (
     <>
       <div className="app">
@@ -26,6 +27,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
-export default App;
+export default MainPage;
