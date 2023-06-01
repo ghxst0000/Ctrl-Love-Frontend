@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 const Swipe = () => {
   const [users, setUsers] = useState([]);
 
+  useEffect(() => {
+    (async () => {})();
+  });
+
   return (
     <>
       <div className="swipe-wrapper">
