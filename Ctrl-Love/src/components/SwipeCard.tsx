@@ -8,7 +8,7 @@ interface SwipeCardProp {
   gender: string;
   biography: string;
   interests: string[];
-  showNext: void;
+  showNext: () => void;
 }
 
 function SwipeCard({
@@ -40,7 +40,7 @@ function SwipeCard({
       </div>
       <button className="next-pic" onClick={() => {setImageCounter(((imageCounter + 1) % images.length));console.log(imageCounter)}}>→</button>
       <button className="prev-pic" onClick={() => {setImageCounter(((imageCounter - 1) % images.length)); console.log(imageCounter)}} >←</button>
-      <button className="like-profile" onClick={() => showNext()}>👍</button>
+      <button className="like-profile" onClick={showNext}>👍</button>
       <button className="dislike-profile">👎</button>
     </div>
     </div>

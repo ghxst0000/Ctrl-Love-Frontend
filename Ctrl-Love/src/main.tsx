@@ -6,9 +6,10 @@ import MainPage from "./components/MainPage.tsx";
 import Swipe from "./components/Swipe.tsx";
 import SwipeCard from "./components/SwipeCard.tsx";
 
-function showNext(){
-  console.log("testing showNext prop");
+const showNext = () => {
+  console.log("a")
 }
+
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         gender="male"
         biography="i like ducc"
         interests={["spidermann", "midnen"]}
-        showNext={showNext()}
+        showNext={showNext}
       />
     ),
   },
