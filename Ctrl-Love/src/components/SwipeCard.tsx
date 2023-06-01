@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./SwipeCard.css";
 
 interface SwipeCardProp {
@@ -7,6 +8,7 @@ interface SwipeCardProp {
   gender: string;
   biography: string;
   interests: string[];
+  showNext: void;
 }
 
 function SwipeCard({
@@ -16,11 +18,15 @@ function SwipeCard({
   gender,
   biography,
   interests,
+  showNext
 }: SwipeCardProp) {
+  const [imageCounter, setImageCounter] = useState(0);
+
   return (
+    <div>
     <div className="card-container">
       <div className="top-section">
-        {<img src={images[0]} alt="profile-pic" className="profile-pic" />}
+        {<img src={images[imageCounter]} alt="profile-pic" className="profile-pic" />}
       </div>
       <div className="bottom-section">
         <h1>
@@ -32,6 +38,11 @@ function SwipeCard({
           <p key={i}>{i}</p>
         ))}
       </div>
+      <button className="next-pic" onClick={() => {setImageCounter(((imageCounter + 1) % images.length));console.log(imageCounter)}}>→</button>
+      <button className="prev-pic" onClick={() => {setImageCounter(((imageCounter - 1) % images.length)); console.log(imageCounter)}} >←</button>
+      <button className="like-profile" onClick={() => showNext()}>👍</button>
+      <button className="dislike-profile">👎</button>
+    </div>
     </div>
   );
 }
