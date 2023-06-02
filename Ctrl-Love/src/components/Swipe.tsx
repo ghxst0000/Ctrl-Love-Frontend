@@ -21,7 +21,7 @@ const Swipe = () => {
 
 
   const fetchData = () => {
-  fetch('http://localhost:5091/api/users')
+  fetch('/api/users')
     .then(response => response.json())
     .then(data => {
       const as : SwipeCardProp[] = data;
