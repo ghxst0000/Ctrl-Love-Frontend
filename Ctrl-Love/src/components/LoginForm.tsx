@@ -13,6 +13,42 @@ const LoginForm = () => {
 
   const navigate = useNavigate();
 
+  async function sendRegisterInfo (e:any) {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const entries = [...form.entries()];
+
+    const user = entries.reduce((acc:any, entry) => {
+      const [k, v] = entry;
+      acc[k] = v;
+      return acc;
+    }, {});
+
+    console.log(user);
+  
+    const apiAddress = "/api/v1/users";
+  
+const body = JSON.stringify({
+  name: user.name,
+  birthDate: (new Date(Date.parse(user.birthDate))).toISOString(),
+  gender: Number(user.gender),
+  email: user.email,
+  password: user.password
+})
+
+  console.table(JSON.parse(body))
+
+    const init: RequestInit = {
+      method: 'POST',
+      headers: new Headers([['content-type', 'application/json']]),
+      body: body,
+    };
+  
+    const response = await fetch(apiAddress, init);
+    const data = await response.json();
+    console.log(data);
+  }
+
   useEffect( () => {
     (async () => {
       const response = await fetch("/api/v1/genders");
@@ -42,7 +78,6 @@ const LoginForm = () => {
           <form onSubmit={(e) => {
             e.preventDefault();
             navigate("/swipe");
-
           }}>
             <br />
             <input type="email" placeholder="Email" name="Email" required />
@@ -57,25 +92,25 @@ const LoginForm = () => {
 
         <div 
         className={!isLoginSelected ? "display-hidden" : ""}>
-          <form>
-            <input type="text" placeholder="Name" name="Name" />
+          <form onSubmit={sendRegisterInfo}>
+            <input type="text" placeholder="Name" name="name" />
             <br />
             <br />
-            <input type="date" placeholder="Birth date" name="BirthDate" />
+            <input type="date" placeholder="Birth date" name="birthDate" />
             <br />
             <br />
-            <select name="Gender">
+            <select name="gender">
               {allGenders && allGenders.map(g => 
-                <option value={g.value}>
+                <option value={g.value} key={g.value}>
                   {g.name}
                 </option>)}
             </select>
             <br />
             <br />
-            <input type="email" placeholder="Email address" name="Email" />
+            <input type="email" placeholder="Email address" name="email" />
             <br />
             <br />
-            <input type="password" placeholder="Password" name="Password" />
+            <input type="password" placeholder="Password" name="password" />
             <br />
             <br />
             <input type="submit" value="Continue →" />
