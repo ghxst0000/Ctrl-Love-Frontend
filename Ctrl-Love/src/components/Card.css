@@ -1,0 +1,14 @@
+.card-component{
+    background-color: rgba(0,0,0,.05);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+}
+
+.card-component > h3{
+    margin: 45px;
+    border-bottom: solid 8px #7CF4D2;
+}

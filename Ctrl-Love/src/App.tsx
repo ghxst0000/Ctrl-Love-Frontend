@@ -1,4 +1,4 @@
-import MainPage from "./components/MainPage";
+import MainPage from "./components/LandingPage";
 import logo from "./assets/logo.svg";
 import "./App.css";
 
