@@ -1,9 +1,8 @@
 
 .main-container-landing-page{
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 012fr 2fr;
     display: grid;
-    min-width: 100vw;
+    min-width: 100%;
     align-items:baseline;
 }
 
@@ -12,6 +11,7 @@
     grid-column: 2;
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .starting-message-container{
@@ -76,7 +76,6 @@ p{
     display: flex;
     flex-flow: column;
     grid-column: 2;
-    grid-gap: 200px;
 }
 
 button{
@@ -97,4 +96,29 @@ button{
 button:hover{
     cursor: pointer;
     transform: translate(0px , -10px);
+    filter: drop-shadow(5px 5px 0.75rem #7CF4D2);
+}
+
+.pink-button:hover {
+    filter: drop-shadow(5px 5px 0.75rem #ffbdcf);
+}
+
+
+
+.navbar-button:hover{
+    cursor: pointer;
+    color: rgba(0,0,0,.7);
+    filter: drop-shadow(5px 5px 0.75rem #ffbdcf);
+}
+
+.navbar-button{
+    font-size: 16px;
+    height: 26px;
+}
+
+section{
+    height: 75vh;
+    align-items: center;
+    width: 100%;
+    display: flex;
 }
