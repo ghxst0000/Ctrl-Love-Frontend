@@ -6,9 +6,25 @@
     align-items: center;
     text-align: center;
     font-size: 12px;
+    position: relative;
+    transition: transform .3s ease-out;
 }
 
 .card-component > h3{
     margin: 45px;
     border-bottom: solid 8px #7CF4D2;
+}
+
+.card-component > img {
+    width: 78x;
+    height: 78px;
+}
+
+.card-component:hover > h3{
+    border-bottom: dotted 8px #7CF4D2;
+}
+
+.card-component:hover{
+    transform: translate(0px , -10px);
+    border-bottom: solid 4px #7CF4D2;
 }
