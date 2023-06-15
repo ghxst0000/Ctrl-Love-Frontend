@@ -5,16 +5,29 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainPage from "./components/LandingPage.tsx";
 import Swipe from "./components/Swipe.tsx";
 import SwipeCard from "./components/SwipeCard.tsx";
+import Footer from "./components/Footer.tsx";
+import SignUpPage from "./components/SignUpPage.tsx";
 
 const showNext = () => {
-  console.log("a")
-}
-
+  console.log("a");
+};
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainPage />,
+    element: (
+      <>
+        <MainPage /> <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <>
+        <SignUpPage /> <Footer />
+      </>
+    ),
   },
   {
     path: "/swipe",
