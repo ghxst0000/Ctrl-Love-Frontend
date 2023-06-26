@@ -20,7 +20,14 @@ const SignUpPage = () => {
       return acc;
     }, {});
 
-    console.log(user);
+    const ageInMilliSecs = Date.now() - Date.parse(user.birthDate);
+    console.log(ageInMilliSecs);
+    if (ageInMilliSecs <= 568036800000) {
+      setData("age error");
+      return;
+    }
+    console.log(Date.now())
+    console.log(user.birthDate);
 
     const apiAddress = "/api/v1/users";
 
@@ -90,6 +97,7 @@ const SignUpPage = () => {
                 <span>{">"}</span>{" "}
                 <input type="date" placeholder="Birth date" name="birthDate" />
               </div>
+              {data && data === "age error" ? <span className="error">You are too young for love! Go play alone and get older!</span> : <></>}
 
               <div className="selector">
                 <span>{">"}</span>{" "}
