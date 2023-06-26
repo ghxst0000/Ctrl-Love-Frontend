@@ -143,3 +143,9 @@ form > div > select{
     color: #7CF4D2;
     transform: translate(-6px , 0px) rotate(90deg);
 }
+
+.error {
+    color: red;
+    font-size: 18px;
+    margin-left: 36px;
+}

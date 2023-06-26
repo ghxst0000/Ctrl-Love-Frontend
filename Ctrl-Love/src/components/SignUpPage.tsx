@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 const SignUpPage = () => {
   const [allGenders, setAllGenders] = useState(null);
+  const [data, setData]:any = useState(null);
 
   const navigate = useNavigate();
 
@@ -40,8 +41,18 @@ const SignUpPage = () => {
     };
 
     const response = await fetch(apiAddress, init);
-    const data = await response.json();
-    console.log(data);
+    switch (response.status) {
+      case 200:
+        setData(await response.json());
+        console.log(data);
+        //redirect to profile
+
+        break;
+      case 418:
+        setData("email error");
+        break;
+    }
+    
   }
 
   useEffect(() => {
@@ -101,6 +112,7 @@ const SignUpPage = () => {
                 <span>{">"}</span>{" "}
                 <input type="email" placeholder="Email address" name="email" />
               </div>
+                {data === "email error" ? <span className="error">This e-mail address is already taken</span> : <></>}
               <div>
                 <span>{">"}</span>{" "}
                 <input type="password" placeholder="Password" name="password" />

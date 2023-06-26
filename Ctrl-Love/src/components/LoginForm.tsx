@@ -46,6 +46,7 @@ const body = JSON.stringify({
   
     const response = await fetch(apiAddress, init);
     const data = await response.json();
+    response.status
     console.log(data);
   }
 
