@@ -31,8 +31,6 @@ const SignUpPage = () => {
       password: user.password,
     });
 
-    console.table(JSON.parse(body));
-
     const init: RequestInit = {
       method: "POST",
       headers: new Headers([["content-type", "application/json"]]),
@@ -117,7 +115,7 @@ const SignUpPage = () => {
 
               <div className="button-container">
                 <span>
-                  <a href="">Want to Log In?</a>
+                  <a href="/login">Want to Log In?</a>
                 </span>
                 <input type="submit" value="Continue >" />
               </div>

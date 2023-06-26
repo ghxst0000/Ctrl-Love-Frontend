@@ -7,6 +7,7 @@ import Swipe from "./components/Swipe.tsx";
 import SwipeCard from "./components/SwipeCard.tsx";
 import Footer from "./components/Footer.tsx";
 import SignUpPage from "./components/SignUpPage.tsx";
+import LoginForm from "./components/LoginForm.tsx";
 
 const showNext = () => {
   console.log("a");
@@ -30,8 +31,12 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/swipe",
-    element: <Swipe />,
+    path: "/login",
+    element: (
+      <>
+        <LoginForm /> <Footer />
+      </>
+    ),
   },
 ]);
 

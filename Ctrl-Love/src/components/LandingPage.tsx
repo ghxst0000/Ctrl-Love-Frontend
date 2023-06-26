@@ -5,6 +5,7 @@ import cardHeart from "../assets/card-container-heart.svg";
 import cardPuzzle from "../assets/card-container-puzlle.svg";
 import cardFinger from "../assets/card-container-clicker.svg";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -18,12 +19,16 @@ const MainPage = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
-            <a className="navbar-button">Sign Up &nbsp; </a>
+            <a href="/signup" className="navbar-button">
+              Sign Up &nbsp;{" "}
+            </a>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
-            <a className="navbar-button">&nbsp; Log In </a>
+            <a href="/login" className="navbar-button">
+              &nbsp; Log In{" "}
+            </a>
           </div>
         </div>
         <section>
@@ -41,7 +46,9 @@ const MainPage = () => {
                 Where Technology and Romance Merge
               </p>
               <div className="buttons">
-                <button className="green-button">Get Started</button>
+                <Link to={"/signup"}>
+                  <button className="green-button">Get Started</button>
+                </Link>
                 <button
                   className="pink-button"
                   style={{ backgroundColor: "#FDE8EE" }}
