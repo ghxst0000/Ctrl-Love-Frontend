@@ -21,13 +21,17 @@ const SignUpPage = () => {
     }, {});
 
     const ageInMilliSecs = Date.now() - Date.parse(user.birthDate);
-    console.log(ageInMilliSecs);
     if (ageInMilliSecs <= 568036800000) {
       setData("age error");
       return;
     }
-    console.log(Date.now())
-    console.log(user.birthDate);
+
+    if (user.password !== user.passwordAgain) {
+      setData("password error");
+      return;
+    }
+
+    
 
     const apiAddress = "/api/v1/users";
 
@@ -129,9 +133,10 @@ const SignUpPage = () => {
                 <input
                   type="password"
                   placeholder="Password"
-                  name="password-again"
+                  name="passwordAgain"
                 />
               </div>
+              {data === "password error" ? <span className="error">The two passwords don't match!</span> : <></>}
 
               <div className="button-container">
                 <span>
