@@ -122,3 +122,9 @@ section{
     width: 100%;
     display: flex;
 }
+
+a:-webkit-any-link{
+    color: unset;
+    cursor: unset;
+    text-decoration: unset;
+}
