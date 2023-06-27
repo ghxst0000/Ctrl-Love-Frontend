@@ -1,20 +1,9 @@
-import LoginForm from './components/LoginForm'
-import './App.css'
+import MainPage from "./components/LandingPage";
+import logo from "./assets/logo.svg";
+import "./App.css";
 
 function App() {
-  return (
-    <>
-      <div><img src='./assets/logo.svg' alt='Image of our logo'></img></div>
-      <div className='app'>
-        <div className='landing-left'>
-
-        </div>
-        <div className="landing-right">
-          <LoginForm />
-        </div>
-      </div>
-    </>
-  )
+  return <MainPage />;
 }
 
-export default App
+export default App;

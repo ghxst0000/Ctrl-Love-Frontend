@@ -1,0 +1,130 @@
+
+.main-container-landing-page{
+    grid-template-columns: 1fr 3fr 1fr;
+    display: grid;
+    min-width: 100%;
+    align-items:baseline;
+}
+
+.header-container{
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.starting-message-container{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-gap: 45px;
+    height: fit-content;
+}
+
+
+.top-row-design{
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.signup-login-buttons{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.lower-component-container{
+    grid-row: 3;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+}
+
+h3{
+    color: #000000
+}
+
+p{
+    color:#000000;
+}
+
+.all-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.lower-component-container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.lower-component-container > h1{
+   margin-bottom: 45px;
+}
+
+.buttons{
+   display: flex;
+   flex-flow: row;
+   gap: 10px;
+}
+
+.content{
+    display: flex;
+    flex-flow: column;
+    grid-column: 2;
+}
+
+button{
+    all: unset;
+    background-color: #7CF4D2;
+    color:#000000;
+    border-radius: 6px;
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    width: fit-content;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: relative;
+    transition: transform .3s ease-out;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: translate(0px , -10px);
+    filter: drop-shadow(5px 5px 0.75rem #7CF4D2);
+}
+
+.pink-button:hover {
+    filter: drop-shadow(5px 5px 0.75rem #ffbdcf);
+}
+
+
+
+.navbar-button:hover{
+    cursor: pointer;
+    color: rgba(0,0,0,.7);
+    filter: drop-shadow(5px 5px 0.75rem #ffbdcf);
+}
+
+.navbar-button{
+    font-size: 16px;
+    height: 26px;
+}
+
+section{
+    height: 75vh;
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+
+a:-webkit-any-link{
+    color: unset;
+    cursor: unset;
+    text-decoration: unset;
+}

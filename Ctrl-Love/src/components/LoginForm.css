@@ -1,0 +1,22 @@
+input{
+  background-color: rgba(0, 0, 0, .05);
+  color: black;
+  border-radius: 5px;
+  height: 25px;
+  font-size: 12px;
+  border: unset;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+form{
+  display: flex;
+  flex-flow: column;
+  width: 480px;
+  gap: 25px;
+}
+
+.sign-up-log-in{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
