@@ -95,17 +95,17 @@ const SignUpPage = () => {
             <form onSubmit={sendRegisterInfo}>
               <div>
                 <span>{">"}</span>{" "}
-                <input type="text" placeholder="Name" name="name" />
+                <input type="text" placeholder="Name" name="name" required />
               </div>
               <div>
                 <span>{">"}</span>{" "}
-                <input type="date" placeholder="Birth date" name="birthDate" />
+                <input type="date" placeholder="Birth date" name="birthDate" required/>
               </div>
               {data && data === "age error" ? <span className="error">You are too young for love! Go play alone and get older!</span> : <></>}
 
               <div className="selector">
                 <span>{">"}</span>{" "}
-                <select name="gender" defaultValue="Selected a Gender">
+                <select name="gender" defaultValue="Selected a Gender" required>
                   <option value="" disabled selected>
                     Select a Gender
                   </option>
@@ -120,12 +120,12 @@ const SignUpPage = () => {
 
               <div>
                 <span>{">"}</span>{" "}
-                <input type="email" placeholder="Email address" name="email" />
+                <input type="email" placeholder="Email address" name="email" required/>
               </div>
                 {data === "email error" ? <span className="error">This e-mail address is already taken</span> : <></>}
               <div>
                 <span>{">"}</span>{" "}
-                <input type="password" placeholder="Password" name="password" />
+                <input type="password" placeholder="Password" name="password" required/>
               </div>
 
               <div>
@@ -134,6 +134,7 @@ const SignUpPage = () => {
                   type="password"
                   placeholder="Password"
                   name="passwordAgain"
+                  required
                 />
               </div>
               {data === "password error" ? <span className="error">The two passwords don't match!</span> : <></>}
