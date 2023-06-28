@@ -1,32 +1,22 @@
-import { useState } from "react";
 import "./SwipeCard.css";
 import ctrlLove from "../assets/logo.svg";
 
 interface SwipeCardProp {
   name: string;
-  birthDate: string;
-  photos: string[];
+  age: number;
+  images: string[];
   gender: string;
   biography: string;
   interests: string[];
-  showNext: () => void;
 }
-
-const genders = {
-  0: "Male",
-  1: "Female",
-  2: "Apache Helicopter",
-  3: "Other",
-};
 
 function SwipeCard({
   name,
-  birthDate,
-  photos,
+  age,
+  images,
   gender,
   biography,
   interests,
-  showNext,
 }: SwipeCardProp) {
   const [selectedPicNumber, setSelectedPicNum] = useState(0);
 
