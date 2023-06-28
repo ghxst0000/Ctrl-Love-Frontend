@@ -50,33 +50,33 @@ const MyProfile = () => {
       <div className="box_parent">
       <div
         className="box2"
-        style={{ backgroundImage: `url(${user.photos[0].url})` }}
+        style={{ backgroundImage: `url(${user.photos == null || user.photos.length == 0 ? "https://www.theyearinpictures.co.uk/images//image-placeholder.png" : user.photos[0].url})` }}
       ></div>
-      <svg className="flt_svg" xmlns="http://www.w3.org/2000/svg%22%3E%22%3E">
-        <defs>
-          <filter id="flt_tag">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="8"
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="
-              1 0 0 0 0 
-              0 1 0 0 0 
-              0 0 1 0 0 
-              0 1 0 19 -10"
-              result="flt_tag"
-            />
-            <feComposite in="SourceGraphic" in2="flt_tag" operator="atop" />
-          </filter>
-        </defs>
-      </svg>
-    </div>}
+        <svg className="flt_svg" xmlns="http://www.w3.org/2000/svg%22%3E%22%3E">
+          <defs>
+            <filter id="flt_tag">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="8"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="
+                1 0 0 0 0 
+                0 1 0 0 0 
+                0 0 1 0 0 
+                0 1 0 19 -10"
+                result="flt_tag"
+              />
+              <feComposite in="SourceGraphic" in2="flt_tag" operator="atop" />
+            </filter>
+          </defs>
+        </svg>
+      </div>}
         
-        </>
+      </>
     )
 }
 
