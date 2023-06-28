@@ -39,12 +39,13 @@ export const LoginForm = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
+          <a href="/signup" className="navbar-button">Sign up &nbsp; </a>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
             <a href="/" className="navbar-button">
-              &nbsp; Landing{" "}
+              &nbsp; Home{" "}
             </a>
           </div>
         </div>

@@ -75,12 +75,14 @@ const SignUpPage = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
-            <a className="navbar-button">Sign Up &nbsp; </a>
+            <a href="/login" className="navbar-button">Log In &nbsp; </a>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
-            <a className="navbar-button">&nbsp; Log In </a>
+            <a href="/" className="navbar-button">
+              &nbsp; Home{" "}
+            </a>
           </div>
         </div>
         <section>
