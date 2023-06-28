@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const SignUpPage = () => {
   const [allGenders, setAllGenders] = useState(null);
-  const [data, setData]:any = useState(null);
+  const [data, setData]: any = useState(null);
 
   const navigate = useNavigate();
 
@@ -30,8 +30,6 @@ const SignUpPage = () => {
       setData("password error");
       return;
     }
-
-    
 
     const apiAddress = "/api/v1/users";
 
@@ -61,7 +59,6 @@ const SignUpPage = () => {
         setData("email error");
         break;
     }
-    
   }
 
   useEffect(() => {
@@ -99,14 +96,25 @@ const SignUpPage = () => {
               </div>
               <div>
                 <span>{">"}</span>{" "}
-                <input type="date" placeholder="Birth date" name="birthDate" required/>
+                <input
+                  type="date"
+                  placeholder="Birth date"
+                  name="birthDate"
+                  required
+                />
               </div>
-              {data && data === "age error" ? <span className="error">You are too young for love! Go play alone and get older!</span> : <></>}
+              {data && data === "age error" ? (
+                <span className="error">
+                  You are too young for love! Go play alone and get older!
+                </span>
+              ) : (
+                <></>
+              )}
 
               <div className="selector">
                 <span>{">"}</span>{" "}
-                <select name="gender" defaultValue="Selected a Gender" required>
-                  <option value="" disabled selected>
+                <select name="gender" defaultValue="Select a Gender" required>
+                  <option value="" disabled>
                     Select a Gender
                   </option>
                   {allGenders &&
@@ -120,12 +128,28 @@ const SignUpPage = () => {
 
               <div>
                 <span>{">"}</span>{" "}
-                <input type="email" placeholder="Email address" name="email" required/>
+                <input
+                  type="email"
+                  placeholder="Email address"
+                  name="email"
+                  required
+                />
               </div>
-                {data === "email error" ? <span className="error">This e-mail address is already taken</span> : <></>}
+              {data === "email error" ? (
+                <span className="error">
+                  This e-mail address is already taken
+                </span>
+              ) : (
+                <></>
+              )}
               <div>
                 <span>{">"}</span>{" "}
-                <input type="password" placeholder="Password" name="password" required/>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  required
+                />
               </div>
 
               <div>
@@ -137,7 +161,11 @@ const SignUpPage = () => {
                   required
                 />
               </div>
-              {data === "password error" ? <span className="error">The two passwords don't match!</span> : <></>}
+              {data === "password error" ? (
+                <span className="error">The two passwords don't match!</span>
+              ) : (
+                <></>
+              )}
 
               <div className="button-container">
                 <span>
