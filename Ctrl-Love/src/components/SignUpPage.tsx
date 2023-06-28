@@ -51,8 +51,8 @@ const SignUpPage = () => {
     switch (response.status) {
       case 200:
         setData(await response.json());
-        console.log(data);
         //redirect to profile
+        navigate("/my-profile");
 
         break;
       case 418:
