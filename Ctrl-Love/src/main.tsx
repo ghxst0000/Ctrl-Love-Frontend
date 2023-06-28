@@ -8,6 +8,7 @@ import SwipeCard from "./components/SwipeCard.tsx";
 import Footer from "./components/Footer.tsx";
 import SignUpPage from "./components/SignUpPage.tsx";
 import LoginForm from "./components/LoginForm.tsx";
+import MyProfile from "./components/MyProfile.tsx";
 
 const showNext = () => {
   console.log("a");
@@ -38,6 +39,14 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  {
+    path: "/my-profile",
+    element: (
+      <>
+      <MyProfile /> <Footer />
+      </>
+    )
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
