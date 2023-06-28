@@ -1,12 +1,14 @@
 import "./LoginForm.css";
 import logo from "../assets/logo.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   const [loginResponse, setLoginResponse] = useState(true);
 
+  const navigate = useNavigate();
+
   async function submitLogin(e: any) {
-    console.log("baj van sanyi");
     e.preventDefault();
     const form = new FormData(e.target);
     const entries = [...form.entries()];
@@ -16,8 +18,6 @@ export const LoginForm = () => {
       acc[k] = v;
       return acc;
     }, {});
-
-    console.table(credentials);
 
     const apiAddress = "/api/v1/users/sign-in";
 
@@ -29,8 +29,11 @@ export const LoginForm = () => {
 
     const response = await fetch(apiAddress, init);
     const data = await response.json();
-    console.log(data);
     setLoginResponse(data);
+    
+    if (data) {
+      navigate("/my-profile");
+    }
   }
 
   return (
@@ -39,12 +42,13 @@ export const LoginForm = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
+          <a href="/signup" className="navbar-button">Sign up &nbsp; </a>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
             <a href="/" className="navbar-button">
-              &nbsp; Landing{" "}
+              &nbsp; Home{" "}
             </a>
           </div>
         </div>

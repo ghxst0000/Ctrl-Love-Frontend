@@ -7,6 +7,7 @@ import Swipe from "./components/Swipe.tsx";
 import Footer from "./components/Footer.tsx";
 import SignUpPage from "./components/SignUpPage.tsx";
 import LoginForm from "./components/LoginForm.tsx";
+import MyProfile from "./components/MyProfile.tsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ const router = createBrowserRouter([
         <LoginForm /> <Footer />
       </>
     ),
+  },
+  {
+    path: "/my-profile",
+    element: (
+      <>
+      <MyProfile /> <Footer />
+      </>
+    )
   },
   {
     path: "/swipe",
