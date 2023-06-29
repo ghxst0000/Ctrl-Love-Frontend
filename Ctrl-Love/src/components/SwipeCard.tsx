@@ -1,5 +1,6 @@
 import "./SwipeCard.css";
 import ctrlLove from "../assets/logo.svg";
+import { useState } from "react";
 
 interface SwipeCardProp {
   name: string;
@@ -8,6 +9,7 @@ interface SwipeCardProp {
   gender: string;
   biography: string;
   interests: string[];
+  showNext: () => void;
 }
 
 function SwipeCard({
@@ -17,9 +19,14 @@ function SwipeCard({
   gender,
   biography,
   interests,
+  showNext,
 }: SwipeCardProp) {
-  const [selectedPicNumber, setSelectedPicNum] = useState(0);
+  age = Math.floor(
+    (Date.now() - Date.parse(String(age))) / 1000 / 3600 / 24 / 365.25
+  );
 
+  const [selectedPicNumber, setSelectedPicNum] = useState(0);
+  console.table(images);
   return (
     <div className="swipe-card-outer-wrapper">
       <div className="content">
@@ -28,7 +35,7 @@ function SwipeCard({
             className="swipe-card-backward-picture"
             onClick={() =>
               setSelectedPicNum(
-                (selectedPicNumber + photos.length - 1) % photos.length
+                (selectedPicNumber + images.length - 1) % images.length
               )
             }
           >
@@ -37,7 +44,9 @@ function SwipeCard({
           <div className="box_parent">
             <div
               className="box2"
-              style={{ backgroundImage: `url(${photos[selectedPicNumber]})` }}
+              style={{
+                backgroundImage: `url(${images[selectedPicNumber].url})`,
+              }}
             ></div>
             <svg className="flt_svg" xmlns="http://www.w3.org/2000/svg%22%3E">
               <defs>
@@ -70,14 +79,14 @@ function SwipeCard({
           <div
             className="swipe-card-forward-picture"
             onClick={() =>
-              setSelectedPicNum((selectedPicNumber + 1) % photos.length)
+              setSelectedPicNum((selectedPicNumber + 1) % images.length)
             }
           >
             <span>{">"}</span>
           </div>
         </div>
         <div className="bubbles-for-picture-count">
-          {photos.map((p, index) => (
+          {images.map((p, index) => (
             <div
               key={index}
               style={
@@ -100,7 +109,7 @@ function SwipeCard({
         <div className="information-age-wrapper">
           <div className="information-age">
             <b>
-              <span>{birthDate}</span>
+              <span>{age}</span>
             </b>
           </div>
         </div>
