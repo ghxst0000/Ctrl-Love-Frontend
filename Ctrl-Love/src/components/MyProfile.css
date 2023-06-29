@@ -1,7 +1,7 @@
 .box2{
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     content: fill;
     background-size: contain;
     background-repeat: no-repeat;
@@ -19,3 +19,177 @@
   {
       filter: url('#flt_tag');
   }
+
+  .sign-up-page-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+form{
+    display: flex;
+    flex-flow: column;
+    width: 480px;
+    gap: 25px;
+}
+
+
+input{
+    background-color: rgba(0, 0, 0, .05);
+    color: black;
+    border-radius: 5px;
+    height: 25px;
+    font-size: 12px;
+    border: unset;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+textarea {
+  background-color: rgba(0, 0, 0, .05);
+  color: black;
+  border-radius: 5px;
+  font-size: 12px;
+  border: unset;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  font-family: inherit;
+  
+}
+
+input::placeholder{
+    color: rgba(0, 0, 0, .5);
+}
+
+
+
+form > div > span{
+    font-weight: 800;
+    font-size: 26px;
+}
+
+form > div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+select{
+    width: 100%;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-container > input{
+        all: unset;
+        background-color: #7CF4D2;
+        color:#000000;
+        border-radius: 6px;
+        height: 40px;
+        text-align: center;
+        font-size: 12px;
+        width: fit-content;
+        padding-left: 24px;
+        padding-right: 24px;
+        position: relative;
+        transition: transform .3s ease-out;
+}
+
+.button-container > input:hover{
+    cursor: pointer;
+    transform: translate(0px , -6px);
+    filter: drop-shadow(5px 5px 0.75rem #7CF4D2);
+}
+
+.button-container > span > a{
+    font-size: 12px;
+    position: relative;
+    transition: transform .3s ease-out;
+}
+
+.button-container > span>a:hover{
+    cursor: pointer;
+}
+
+.sign-up-text{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up-content{
+        display: flex;
+        flex-flow: column;
+        grid-column: 2;
+        justify-content: center;
+        align-items: center;
+}
+
+.top-row-design{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sign-up-content > section{
+    justify-content: center;
+    flex-flow: column;
+    display: flex;
+}
+
+form > div > span {
+    position: relative;
+    transition: transform .3s ease-out;
+}
+
+form > div:focus-within > span {
+    color: #7CF4D2;
+    transform: translate(-6px , 0px);
+}
+
+.sing-up-text{
+    font-size: 26px;
+    font-weight: 600;
+    color: #7CF4D2; 
+    margin-bottom: 45px;
+}
+
+form > div > select{
+    background-color: rgba(0, 0, 0, .05);
+    color: black;
+    border-radius: 5px;
+    height: 25px;
+    font-size: 12px;
+    border: unset;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+.selector > select{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.selector:focus-within > span{
+    color: #7CF4D2;
+    transform: translate(-6px , 0px) rotate(90deg);
+}
+
+.error {
+    color: red;
+    font-size: 18px;
+    margin-left: 36px;
+}
+
+.modify-profile-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between
+}

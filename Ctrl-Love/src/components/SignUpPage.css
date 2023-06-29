@@ -44,7 +44,8 @@ select{
 
 .button-container{
     display: flex;
-    justify-content: space-evenly;
+    width: 100%;
+    justify-content: flex-end;
 }
 
 .button-container > input{
@@ -78,7 +79,7 @@ select{
     cursor: pointer;
 }
 
-.sing-up-text{
+.sign-up-text{
     width: 100%;
     text-align: center;
     display: flex;
