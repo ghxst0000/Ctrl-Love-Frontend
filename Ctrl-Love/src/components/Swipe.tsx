@@ -19,12 +19,11 @@ const Swipe = () => {
   const [userIndex, setUserIndex] = useState(0);
 
   const fetchData = () => {
-    fetch("/api/users")
+    fetch("/api/v1/users")
       .then((response) => response.json())
       .then((data) => {
         const as: SwipeCardProp[] = data;
         setUsers(as);
-        console.log(as);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -49,8 +48,8 @@ const Swipe = () => {
               {
                 <SwipeCard
                   name={users[userIndex].name}
-                  birthDate={users[userIndex].birthDate}
-                  photos={users[userIndex].photos}
+                  age={users[userIndex].birthDate}
+                  images={users[userIndex].photos}
                   gender={users[userIndex].gender}
                   biography={users[userIndex].biography}
                   interests={users[userIndex].interests}
