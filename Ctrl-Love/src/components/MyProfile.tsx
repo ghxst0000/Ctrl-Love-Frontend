@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./MyProfile.css";
 import logo from "../assets/logo.svg";
 
@@ -22,6 +23,8 @@ const MyProfile = () => {
     const [user, setUser]: any = useState();
     const [allGenders, setAllGenders] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+
+    const navigate = useNavigate();
 
     const cookieId = document.cookie.split("=")[1];
 
@@ -91,7 +94,7 @@ const MyProfile = () => {
             <div className="top-row-design">
               <img src={logo} alt="this is our logo" />
               <div className="signup-login-buttons">
-                <a href="/login" className="navbar-button">Log In &nbsp; </a>
+                <a onClick={async () => {await fetch("/api/v1/users/logout"); navigate("/")}} className="navbar-button">Log Out &nbsp; </a>
                 <b>
                   <span style={{ color: "#1EEBB1" }}>/</span>
                   <span style={{ color: "#FDE8EE" }}>/</span>
