@@ -13,8 +13,8 @@ interface MyProfileProp {
     biography: string;
     interests: string[];
     created: Date;
-    minAge: number;
-    maxAge: number;
+    minimumAge: number;
+    maximumAge: number;
     desiredGenders: object[];
   }
 
@@ -40,18 +40,7 @@ const MyProfile = () => {
         });
     };
 
-
-    useEffect(() => {
-        (async () => {
-          const response = await fetch("/api/v1/genders");
-          const genders = await response.json();
-          setAllGenders(genders);
-        })();
-        fetchData();
-      }, []);
-
-
-    async function sendProfileModification(e : any) {
+    async function sendProfileModification(e: any) {
       e.preventDefault();
       const form = new FormData(e.target);
       const entries = [...form.entries()];
@@ -61,8 +50,39 @@ const MyProfile = () => {
         acc[k] = v;
         return acc;
       }, {});
-      //put request
-    } 
+  
+      const apiAddress = `/api/v1/users/${cookieId}`;
+  
+      const body = JSON.stringify({
+        name: modifiedUser.name,
+        gender: Number(modifiedUser.gender),
+        minimumAge: Number(modifiedUser.minimumAge),
+        maximumAge: Number(modifiedUser.maximumAge),
+        biography: modifiedUser.biography,
+        location: modifiedUser.location
+      }); 
+
+      console.log(body)
+
+      const init: RequestInit = {
+        method: "PUT",
+        headers: new Headers([["content-type", "application/json"]]),
+        body: body,
+      };
+  
+      const response = await fetch(apiAddress, init);
+      console.log(response);
+    }
+
+
+    useEffect(() => {
+        (async () => {
+          const response = await fetch("/api/v1/genders");
+          const genders = await response.json();
+          setAllGenders(genders);
+        })();
+        fetchData();
+      }, []);
 
     return (
       <>
@@ -116,7 +136,7 @@ const MyProfile = () => {
                     <div>
                     <label>Your name</label>
                       <span>{">"}</span>{" "}
-                      <input type="text" value={user.name} name="name" required />
+                      <input type="text" defaultValue={user.name} name="name" required />
                     </div>
                     <div className="selector">
                       <span>{">"}</span>{" "}
@@ -130,22 +150,17 @@ const MyProfile = () => {
                       </select>
                     </div>
                     <div>
-                      <span>{">"}</span>{" "}
-                      <input
-                        type="email"
-                        value={user.email}
-                        name="email"
-                        required
-                      />
+                    <span>{">"}</span>{" "}
+                      <input type="number" name="minimumAge"  min={18} defaultValue={user.minimumAge} placeholder="Minimum age"></input>
+                      <input type="number" name="maximumAge" min={18} defaultValue={user.maximumAge} placeholder="Maximum age"></input>
                     </div>
                     <div>
                     <span>{">"}</span>{" "}
-                      <input type="number" name="minAge"  min={18} value={user.minAge} placeholder="Minimum age"></input>
-                      <input type="number" name="maxAge" min={18} value={user.maxAge} placeholder="Maximum age"></input>
+                      <input type="text" name="location" defaultValue={user.location} placeholder="Your location"></input>
                     </div>
                     <div>
                     <span>{">"}</span>{" "}
-                      <textarea name="biography" value={user.biography} rows={6} placeholder="Tell us a little about yourself!"></textarea>
+                      <textarea name="biography" defaultValue={user.biography} rows={6} placeholder="Tell us a little about yourself!"></textarea>
                     </div>
                     <div className="button-container">
                       <input type="submit" value="Save change >" />
