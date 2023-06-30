@@ -1,0 +1,60 @@
+.frame-child6 {
+    top: 0;
+    left: 380px;
+    border-radius: 0 12px 12px 0;
+    background-color: #1eebb1;
+    width: 8px;
+    height: 90px;
+    position: absolute;
+  }
+  .mask-group-icon5 {
+    
+    top: 3px;
+    left: 12px;
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+    grid-column: 2;
+  }
+  .baj-van-sanyi5,
+  .thybor1 {
+    
+    top: 17px;
+    left: 126px;
+  }
+  .baj-van-sanyi5 {
+    top: 41px;
+    left: 140px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    width: 251px;
+    height: 14px;
+  }
+  .frame-child7 {
+    
+    top: 47px;
+    left: 128px;
+    border-radius: 50%;
+    background-color: #1eebb1;
+    width: 7px;
+    height: 7px;
+  }
+  .rectangle-parent2 {
+    align-self: stretch;
+    position: relative;
+    border-radius: 12px;
+    background-color: #f2f2f2;
+    height: 90px;
+    text-align: left;
+    font-size: 16px;
+    color: #000;
+    font-family: Poppins;
+    width: 390px;
+    display: grid;
+    grid-template-columns: 1fr 3fr auto;
+    gap: 35px;
+    align-items: center;
+    border-right: solid 12px #7CF4D2;
+  }
+  

@@ -5,3 +5,14 @@
     width: 100vw;
     height: 60%;
 }
+
+.top-row-design-swipe{
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup-login-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

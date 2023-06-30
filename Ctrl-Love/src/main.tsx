@@ -8,6 +8,8 @@ import Footer from "./components/Footer.tsx";
 import SignUpPage from "./components/SignUpPage.tsx";
 import LoginForm from "./components/LoginForm.tsx";
 import MyProfile from "./components/MyProfile.tsx";
+import MatchComponent from "./components/MatchComponent.tsx";
+import ChatPage from "./components/ChatPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -38,15 +40,23 @@ const router = createBrowserRouter([
     path: "/my-profile",
     element: (
       <>
-      <MyProfile /> <Footer />
+        <MyProfile /> <Footer />
       </>
-    )
+    ),
   },
   {
     path: "/swipe",
     element: (
       <>
         <Swipe /> <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/card",
+    element: (
+      <>
+        <ChatPage /> <Footer />
       </>
     ),
   },
