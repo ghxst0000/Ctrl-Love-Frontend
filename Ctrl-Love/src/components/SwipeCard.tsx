@@ -1,7 +1,6 @@
 import "./SwipeCard.css";
-import ctrlLove from "../assets/logo.svg";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import mockProfile from "../assets/mockprofile.svg";
 interface SwipeCardProp {
   name: string;
   age: number;
@@ -10,6 +9,8 @@ interface SwipeCardProp {
   biography: string;
   interests: string[];
   showNext: () => void;
+  addToLikes: () => void;
+  addToDisLikes: () => void;
 }
 
 function SwipeCard({
@@ -20,12 +21,25 @@ function SwipeCard({
   biography,
   interests,
   showNext,
+  addToLikes,
+  addToDisLikes,
 }: SwipeCardProp) {
+  console.log(interests);
   age = Math.floor(
     (Date.now() - Date.parse(String(age))) / 1000 / 3600 / 24 / 365.25
   );
 
   const [selectedPicNumber, setSelectedPicNum] = useState(0);
+  const [allGenders, setAllGenders] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch("/api/v1/genders");
+      const genders = await response.json();
+      setAllGenders(genders);
+    })();
+  }, []);
+
   console.table(images);
   return (
     <div className="swipe-card-outer-wrapper">
@@ -42,38 +56,16 @@ function SwipeCard({
             <span>{"<"}</span>
           </div>
           <div className="box_parent">
-            <div
-              className="box2"
-              style={{
-                backgroundImage: `url(${images[selectedPicNumber].url})`,
-              }}
-            ></div>
-            <svg className="flt_svg" xmlns="http://www.w3.org/2000/svg%22%3E">
-              <defs>
-                <filter id="flt_tag">
-                  <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="8"
-                    result="blur"
-                  />
-                  <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="
-                  1 0 0 0 0 
-                  0 1 0 0 0 
-                  0 0 1 0 0 
-                  0 1 0 19 -10"
-                    result="flt_tag"
-                  />
-                  <feComposite
-                    in="SourceGraphic"
-                    in2="flt_tag"
-                    operator="atop"
-                  />
-                </filter>
-              </defs>
-            </svg>
+            {images && (
+              <img
+                className="box2"
+                src={
+                  images.length > 1
+                    ? images[selectedPicNumber].url
+                    : mockProfile
+                }
+              ></img>
+            )}
           </div>
           <div className="rectangle-33"></div>
           <div
@@ -102,30 +94,47 @@ function SwipeCard({
           <b>
             <span>{name}</span>
           </b>
-          <b>
-            <span>{gender}</span>
-          </b>
-        </div>
-        <div className="information-age-wrapper">
-          <div className="information-age">
-            <b>
-              <span>{age}</span>
-            </b>
+          <div className="information-age-wrapper">
+            <div className="information-age">
+              <b>
+                <span>{age}</span>
+              </b>
+            </div>
           </div>
+          <b>
+            {allGenders &&
+              allGenders
+                .filter((g) => g.value === gender)
+                .map((g) => <span key={g.value}>{g.name}</span>)}
+          </b>
         </div>
         <div className="biography-content">{biography}</div>
         <div className="interest-content">
           {interests.map((i, index) => (
             <div key={index} className="interest-bubble">
-              {i}
+              {i.name}
             </div>
           ))}
         </div>
         <div className="button-container">
-          <button className="no" onClick={showNext}>
+          <button
+            className="no"
+            onClick={() => {
+              addToDisLikes();
+              showNext();
+              setSelectedPicNum(0);
+            }}
+          >
             No
           </button>
-          <button className="yes" onClick={showNext}>
+          <button
+            className="yes"
+            onClick={() => {
+              addToLikes();
+              showNext();
+              setSelectedPicNum(0);
+            }}
+          >
             Yes
           </button>
         </div>
