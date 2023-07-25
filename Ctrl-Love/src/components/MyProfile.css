@@ -1,12 +1,4 @@
-.box2{
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
-    width: 400px;
-    height: 400px;
-    content: fill;
-    background-size: 100%;
-    background: no-repeat;
-  }
-  
+
   .flt_svg {
     visibility: hidden; 
     position: absolute;
