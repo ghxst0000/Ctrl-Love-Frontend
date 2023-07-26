@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./MyProfile.css";
-import logo from "../assets/logo.svg";
 
 interface MyProfileProp {
     id: string;
