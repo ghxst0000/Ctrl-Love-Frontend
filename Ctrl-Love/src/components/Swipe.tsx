@@ -19,7 +19,7 @@ const Swipe = () => {
   const [users, setUsers]: any = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [userIndex, setUserIndex] = useState(0);
-  const [data, setData]: any = useState();
+  const [_, setData]: any = useState();
   async function fetchingLike() {
     const init: RequestInit = {
       method: "POST",
@@ -52,9 +52,6 @@ const Swipe = () => {
         setUsers(as);
         setIsLoading(false);
         console.table(data);
-      })
-      .catch((error) => {
-        // Handle any errors
       });
   };
 

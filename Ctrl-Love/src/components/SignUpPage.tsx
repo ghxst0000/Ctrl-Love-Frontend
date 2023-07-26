@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const SignUpPage = () => {
-  const [allGenders, setAllGenders] = useState(null);
+  const [allGenders, setAllGenders]: any = useState(null);
   const [data, setData]: any = useState(null);
 
   const navigate = useNavigate();
@@ -75,7 +75,9 @@ const SignUpPage = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
-            <a href="/login" className="navbar-button">Log In &nbsp; </a>
+            <a href="/login" className="navbar-button">
+              Log In &nbsp;{" "}
+            </a>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
@@ -120,7 +122,7 @@ const SignUpPage = () => {
                     Select a Gender
                   </option>
                   {allGenders &&
-                    allGenders.map((g) => (
+                    allGenders.map((g: any) => (
                       <option value={g.value} key={g.value}>
                         {g.name}
                       </option>

@@ -4,10 +4,10 @@ import mockProfile from "../assets/mockprofile.svg";
 interface SwipeCardProp {
   name: string;
   age: number;
-  images: string[];
+  images: any;
   gender: string;
   biography: string;
-  interests: string[];
+  interests: any;
   showNext: () => void;
   addToLikes: () => void;
   addToDisLikes: () => void;
@@ -30,7 +30,7 @@ function SwipeCard({
   );
 
   const [selectedPicNumber, setSelectedPicNum] = useState(0);
-  const [allGenders, setAllGenders] = useState(null);
+  const [allGenders, setAllGenders]: any = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -78,7 +78,7 @@ function SwipeCard({
           </div>
         </div>
         <div className="bubbles-for-picture-count">
-          {images.map((p, index) => (
+          {images.map((_: any, index: any) => (
             <div
               key={index}
               style={
@@ -104,13 +104,13 @@ function SwipeCard({
           <b>
             {allGenders &&
               allGenders
-                .filter((g) => g.value === gender)
-                .map((g) => <span key={g.value}>{g.name}</span>)}
+                .filter((g: any) => g.value === gender)
+                .map((g: any) => <span key={g.value}>{g.name}</span>)}
           </b>
         </div>
         <div className="biography-content">{biography}</div>
         <div className="interest-content">
-          {interests.map((i, index) => (
+          {interests.map((i: any, index: any) => (
             <div key={index} className="interest-bubble">
               {i.name}
             </div>
