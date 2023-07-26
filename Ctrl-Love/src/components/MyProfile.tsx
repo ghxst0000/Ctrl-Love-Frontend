@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./MyProfile.css";
+import logo from "../assets/logo.svg";
 
 interface MyProfileProp {
+
   id: string;
   name: string;
   email: string;
@@ -22,6 +25,7 @@ const MyProfile = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const cookieId = document.cookie.split("=")[1];
+
 
   const fetchData = () => {
     fetch(`/api/v1/users/my-profile/${cookieId}`)
@@ -77,5 +81,6 @@ const MyProfile = () => {
     </>
   );
 };
+
 
 export default MyProfile;
