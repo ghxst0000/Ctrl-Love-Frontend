@@ -16,7 +16,7 @@ interface Match {
 }
 
 const ChatPage = () => {
-  const [matches, setMatches]: any = useState();
+  const [matches, setMatches]: any[] = useState();
 
   const [_, setConnection]: any = useState();
 
