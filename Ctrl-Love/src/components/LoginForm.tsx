@@ -30,7 +30,7 @@ export const LoginForm = () => {
     const response = await fetch(apiAddress, init);
     const data = await response.json();
     setLoginResponse(data);
-    
+
     if (data) {
       navigate("/my-profile");
     }
@@ -42,7 +42,9 @@ export const LoginForm = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
-          <a href="/signup" className="navbar-button">Sign up &nbsp; </a>
+            <a href="/signup" className="navbar-button">
+              Sign up &nbsp;{" "}
+            </a>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>

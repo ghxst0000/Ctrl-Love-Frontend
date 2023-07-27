@@ -6,13 +6,8 @@ import cardPuzzle from "../assets/card-container-puzlle.svg";
 import cardFinger from "../assets/card-container-clicker.svg";
 import Card from "./Card";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
-import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="main-container-landing-page">
       <div className="content">
