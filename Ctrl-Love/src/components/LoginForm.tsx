@@ -1,7 +1,7 @@
 import "./LoginForm.css";
 import logo from "../assets/logo.svg";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
   const [loginResponse, setLoginResponse] = useState(true);
@@ -42,9 +42,11 @@ export const LoginForm = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
-            <a href="/signup" className="navbar-button">
+            <Link to={"/signup"}>
+            <a  className="navbar-button">
               Sign up &nbsp;{" "}
             </a>
+            </Link>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
