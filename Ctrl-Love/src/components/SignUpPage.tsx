@@ -1,6 +1,6 @@
 import "./SignUpPage.css";
 import logo from "../assets/logo.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const SignUpPage = () => {
@@ -51,8 +51,7 @@ const SignUpPage = () => {
     switch (response.status) {
       case 200:
         setData(await response.json());
-        //redirect to profile
-        navigate("/my-profile");
+        navigate("/login");
 
         break;
       case 418:
@@ -75,16 +74,16 @@ const SignUpPage = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
-            <a href="/login" className="navbar-button">
-              Log In &nbsp;{" "}
-            </a>
+            <Link to={"/login"}>
+              <a className="navbar-button">Log In &nbsp; </a>
+            </Link>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
-            <a href="/" className="navbar-button">
-              &nbsp; Home{" "}
-            </a>
+            <Link to={"/"}>
+              <a className="navbar-button">&nbsp; Home </a>
+            </Link>
           </div>
         </div>
         <section>
@@ -173,7 +172,9 @@ const SignUpPage = () => {
 
               <div className="button-container">
                 <span>
-                  <a href="/login">Want to Log In?</a>
+                  <Link to={"/login"}>
+                    <a>Want to Log In?</a>
+                  </Link>
                 </span>
                 <input type="submit" value="Continue >" />
               </div>

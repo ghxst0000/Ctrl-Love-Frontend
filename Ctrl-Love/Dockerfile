@@ -1,4 +1,4 @@
-FROM node:20-alpine3.17 as build
+FROM node:lts as build
 
 WORKDIR /Ctrl-Love
 COPY package*.json ./
