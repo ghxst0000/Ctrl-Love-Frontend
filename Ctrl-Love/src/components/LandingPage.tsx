@@ -14,16 +14,18 @@ const MainPage = () => {
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
-            <a href="/signup" className="navbar-button">
-              Sign Up &nbsp;{" "}
-            </a>
+            <Link to={"/signup"}>
+              <a className="navbar-button">Sign Up &nbsp; </a>
+            </Link>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
-            <a href="/login" className="navbar-button">
-              &nbsp; Log In{" "}
-            </a>
+            <Link to={"/login"}>
+              <a href="/login" className="navbar-button">
+                &nbsp; Log In{" "}
+              </a>
+            </Link>
           </div>
         </div>
         <section>
