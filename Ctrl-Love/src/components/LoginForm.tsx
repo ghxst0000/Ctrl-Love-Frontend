@@ -43,17 +43,15 @@ export const LoginForm = () => {
           <img src={logo} alt="this is our logo" />
           <div className="signup-login-buttons">
             <Link to={"/signup"}>
-            <a  className="navbar-button">
-              Sign up &nbsp;{" "}
-            </a>
+              <a className="navbar-button">Sign up &nbsp; </a>
             </Link>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
-            <a href="/" className="navbar-button">
-              &nbsp; Home{" "}
-            </a>
+            <Link to={"/"}>
+              <a className="navbar-button">&nbsp; Home </a>
+            </Link>
           </div>
         </div>
         <section>
@@ -73,7 +71,9 @@ export const LoginForm = () => {
               </div>
               <div className="button-container">
                 <span>
-                  <a href="/signup">Want to Sign Up?</a>
+                  <Link to={"/signup"}>
+                    <a href="/signup">Want to Sign Up?</a>
+                  </Link>
                 </span>
                 <input type="submit" value="Continue >" />
               </div>

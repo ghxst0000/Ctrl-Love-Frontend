@@ -2,6 +2,7 @@ import logo from "../assets/logo.svg";
 import { useState, useEffect } from "react";
 import SwipeCard from "./SwipeCard";
 import "./Swipe.css";
+import { Link } from "react-router-dom";
 
 interface SwipeCardProp {
   name: string;
@@ -79,16 +80,18 @@ const Swipe = () => {
             <div className="top-row-design-swipe">
               <img src={logo} alt="this is our logo" />
               <div className="signup-login-buttons">
-                <a href="/matches" className="navbar-button">
-                  Matches &nbsp;{" "}
-                </a>
+                <Link to="/matches">
+                  <a href="/matches" className="navbar-button">
+                    Matches &nbsp;{" "}
+                  </a>
+                </Link>
                 <b>
                   <span style={{ color: "#1EEBB1" }}>/</span>
                   <span style={{ color: "#FDE8EE" }}>/</span>
                 </b>
-                <a href="/my-profile" className="navbar-button">
-                  &nbsp; My Profile{" "}
-                </a>
+                <Link to="/my-profile">
+                  <a className="navbar-button">&nbsp; My Profile </a>
+                </Link>
               </div>
             </div>
             <div className="swipe-card">

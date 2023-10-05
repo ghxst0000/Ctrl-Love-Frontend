@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./MyProfile.css";
 import logo from "../assets/logo.svg";
 
@@ -103,9 +103,11 @@ const MyProfile = () => {
                 <span style={{ color: "#1EEBB1" }}>/</span>
                 <span style={{ color: "#FDE8EE" }}>/</span>
               </b>
-              <a href="/" className="navbar-button">
-                &nbsp; Home{" "}
-              </a>
+              <Link to="/swipe">
+                <a href="/swipe" className="navbar-button">
+                  &nbsp; Swipe{" "}
+                </a>
+              </Link>
             </div>
           </div>
           {!isLoading && (
