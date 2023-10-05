@@ -41,16 +41,17 @@ export const LoginForm = () => {
       <div className="sign-up-content">
         <div className="top-row-design">
           <img src={logo} alt="this is our logo" />
+          <Link to="/signup"></Link>
           <div className="signup-login-buttons">
-            <Link to={"/signup"}>
-              <a className="navbar-button">Sign up &nbsp; </a>
-            </Link>
+            <a className="navbar-button">Sign up &nbsp; </a>
             <b>
               <span style={{ color: "#1EEBB1" }}>/</span>
               <span style={{ color: "#FDE8EE" }}>/</span>
             </b>
-            <Link to={"/"}>
-              <a className="navbar-button">&nbsp; Home </a>
+            <Link to="/">
+              <a href="/" className="navbar-button">
+                &nbsp; Home{" "}
+              </a>
             </Link>
           </div>
         </div>
