@@ -119,7 +119,8 @@ function SwipeCard({
         <div className="button-container">
           <button
             className="no"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               addToDisLikes();
               showNext();
               setSelectedPicNum(0);
@@ -129,7 +130,8 @@ function SwipeCard({
           </button>
           <button
             className="yes"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               addToLikes();
               showNext();
               setSelectedPicNum(0);
